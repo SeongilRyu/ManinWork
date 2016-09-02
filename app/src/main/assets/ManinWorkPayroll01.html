@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <style id="ManinWorkforExcel_31853_Styles">
+        <!--
+        table {
+            border-collapse: collapse;
+            border:1pt solid #000;
+            width: 100%;
+        }
+        th, td {
+            border-collapse: collapse;
+            border:1pt solid ;
+            padding:0.3em;
+            width:9%;
+        }
+        th {
+            background:#eee;
+        }
+        caption {
+            padding:0.3em;
+        }
+        .xlabel {
+            background:#E7E6E6;
+            padding-top:1px;
+            padding-right:1px;
+            padding-left:1px;
+            color:black;
+            font-size:11.0pt;
+            font-weight:700;
+            font-style:normal;
+            text-decoration:none;
+            font-family:"맑은 고딕", monospace;
+            text-align:center;
+            vertical-align:middle;
+        }
+        .xtext_center {
+            padding-top:1px;
+            padding-right:1px;
+            padding-left:1px;
+            color:black;
+            font-size:11.0pt;
+            font-weight:400;
+            font-style:normal;
+            text-decoration:none;
+            font-family:"맑은 고딕", monospace;
+            text-align:center;
+            vertical-align:middle;
+            white-space:nowrap;
+        }
+        -->
+    </style>
+</head>
+
+<body>
+<div id="ManinWorkforExcel_31853" align=center >
+    <table cellpadding=0 cellspacing=0 >
+        <tr height=44>
+            <td class='xlabel'>업체명:</td>
+            <td colspan=2 class='xtext_center'><b>{company}</b></td>
+            <td class='xlabel' >년월:</td>
+            <td class='xtext_center'><b>{tym}</b></td>
+        </tr>
+        <tr height=34 >
+            <td class='xlabel'>성명:</td>
+            <td class='xtext_center'><b>{lname}</b></td>
+            <td colspan=4 class='xlabel'>기본급 일수</td>
+            <td colspan=2 class='xlabel'>교대수당</td>
+            <td colspan=2 class='xlabel'>교통비</td>
+            <td rowspan=2 class='xlabel'>기본급</td>
+        </tr>
+        <tr height=24 >
+            <td class='xlabel'>시급</td>
+            <td class='xlabel'>일당</td>
+            <td class='xlabel'>출근</td>
+            <td class='xlabel'>주차</td>
+            <td class='xlabel'>유급</td>
+            <td class='xlabel'>계</td>
+            <td class='xlabel'>일수</td>
+            <td class='xlabel'>금액</td>
+            <td class='xlabel'>일수</td>
+            <td class='xlabel'>금액</td>
+        </tr>
+        <tr height=32 >
+            <td class='xtext_center'>{payhour}</td>
+            <td class='xtext_center'>{payday}</td>
+            <td class='xtext_center' >{d_std}</td>
+            <td class='xtext_center' >{d_jc}</td>
+            <td class='xtext_center'>{d_yg}</td>
+            <td class='xtext_center'>{d_total}</td>
+            <td class='xtext_center'>{d_transit}</td>
+            <td class='xtext_center'>{m_transit}</td>
+            <td class='xtext_center'>{d_transport}</td>
+            <td class='xtext_center'>{m_transport}</td>
+            <td class='xtext_center'><b>{pay_base}</b></td>
+        </tr>
+        <tr height=34 >
+            <td colspan=2 class='xlabel'>잔업</td>
+            <td colspan=2 class='xlabel'>특근</td>
+            <td colspan=2 class='xlabel'>특근연장</td>
+            <td colspan=2 class='xlabel'>야간</td>
+            <td colspan=2 class='xlabel'><span style="color:red">지각조퇴외출</span></td>
+            <td class='xlabel'>상여금</td>
+        </tr>
+        <tr height=24 >
+            <td class='xlabel'>시간</td>
+            <td class='xlabel'>금액</td>
+            <td class='xlabel'>시간</td>
+            <td class='xlabel'>금액</td>
+            <td class='xlabel'>시간</td>
+            <td class='xlabel'>금액</td>
+            <td class='xlabel'>시간</td>
+            <td class='xlabel'>금액</td>
+            <td class='xlabel'><span style="color:red">시간</span></td>
+            <td class='xlabel'><span style="color:red">금액</span></td>
+            <td class='xtext_center'><b>{pay_bonus}</b></td>
+        </tr>
+        <tr height=32 >
+            <td class='xtext_center'>{h_over}</td>
+            <td class='xtext_center'>{m_over}</td>
+            <td class='xtext_center'>{h_special}</td>
+            <td class='xtext_center'>{m_special}</td>
+            <td class='xtext_center'>{h_spover}</td>
+            <td class='xtext_center'>{m_spover}</td>
+            <td class='xtext_center'>{h_night}</td>
+            <td class='xtext_center'>{m_night}</td>
+            <td class='xtext_center'><span style="color:red">{h_latea}</span></td>
+            <td class='xtext_center'><span style="color:red">{m_latea}</span></td>
+            <td class='xlabel'>임금합계</td>
+        </tr>
+        <tr height=34 >
+            <td colspan=10 class='xlabel'>공제금액</td>
+            <td class='xtext_center'><b>{pay_total}</b></td>
+        </tr>
+        <tr height=24 >
+            <td class='xlabel'>갑근세</td>
+            <td class='xlabel'>주민세</td>
+            <td class='xlabel'>국민연금</td>
+            <td class='xlabel'>건강보험</td>
+            <td class='xlabel'>장기요양</td>
+            <td class='xlabel'>고용보험</td>
+            <td class='xlabel'>산재보험</td>
+            <td class='xlabel'></td>
+            <td class='xlabel'></td>
+            <td class='xlabel'><span style="color:red">가불금</span></td>
+            <td class='xlabel'>지급총액</td>
+        </tr>
+        <tr height=32 >
+            <td class='xtext_center'>{t_income}</td>
+            <td class='xtext_center'>{t_income10}</td>
+            <td class='xtext_center'>{t_pension}</td>
+            <td class='xtext_center'>{t_health}</td>
+            <td class='xtext_center'>{t_health10}</td>
+            <td class='xtext_center'>{t_employ}</td>
+            <td class='xtext_center'>{t_hurt}</td>
+            <td class='xtext_center'>-</td>
+            <td class='xtext_center'>-</td>
+            <td class='xtext_center'><span style="color:red">{t_prepay}</span></td>
+            <td class='xtext_center'><b>{pay_real}</b></td>
+        </tr>
+        <![if supportMisalignedColumns]>
+        <tr height=0 >
+        </tr>
+        <![endif]>
+    </table>
+
+</div>
+
+</body>
+
+</html>

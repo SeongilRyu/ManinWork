@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_rhead"
+        android:hint="@string/lbl_company"
+        android:textStyle="italic"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_r10"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="#1222f8"
+            android:hint="@string/lbl_company" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/txt_r12"
+                android:layout_gravity="left|bottom"
+                android:layout_weight="1"
+                android:hint="@string/lbl_rep"
+                android:gravity="end" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/txt_r13"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:hint="@string/lbl_mobile"
+                android:gravity="end" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_r14"
+                android:layout_gravity="bottom|right"
+                android:gravity="end"
+                android:textColor="#64dd17"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:hint="@string/lbl_payperhour" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_r20"
+            android:hint="@string/lbl_email"
+            android:ellipsize="marquee"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/txt_r22"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="@string/lbl_transport" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/txt_r23"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="@string/lbl_transit" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/txt_r25"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="@string/lbl_bonusrate"
+                android:textColor="#64dd17"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nwsoft.maninwork.CompanyActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView22"
+            android:hint="@string/lbl_company_info"
+            android:background="@drawable/notification_template_icon_bg"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/txt_folder"
+            android:clickable="true"
+            android:background="@android:drawable/arrow_up_float" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lo_header">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_cname"
+                android:hint="@string/lbl_company"
+                android:layout_weight="1"
+                android:lines="1"
+                android:selectAllOnFocus="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_crep"
+                android:hint="@string/lbl_rep"
+                android:layout_weight="1"
+                android:lines="1"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:selectAllOnFocus="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lo_folder">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_crepmobile"
+                    android:hint="@string/lbl_mobile"
+                    android:layout_weight="1"
+                    android:lines="1"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:selectAllOnFocus="true" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_cemail"
+                    android:hint="@string/lbl_email"
+                    android:layout_weight="1"
+                    android:lines="1"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:selectAllOnFocus="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_cpayperhour"
+                    android:hint="@string/lbl_payperhour"
+                    android:layout_weight="1"
+                    android:lines="1"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:selectAllOnFocus="true" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_cpaydays"
+                    android:hint="@string/lbl_paydays"
+                    android:layout_weight="1"
+                    android:lines="1"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:selectAllOnFocus="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_cpaytransportation"
+                    android:hint="@string/lbl_transport"
+                    android:layout_weight="1"
+                    android:lines="1"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:selectAllOnFocus="true" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_cpaytransition"
+                    android:hint="@string/lbl_transit"
+                    android:layout_weight="1"
+                    android:lines="1"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:selectAllOnFocus="true" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_bonusrate"
+                    android:hint="@string/lbl_bonusrate"
+                    android:lines="1"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:selectAllOnFocus="true"
+                    android:gravity="end"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText"
+                    android:text="%"
+                    android:lines="1"
+                    android:editable="false"
+                    android:enabled="false"
+                    android:gravity="start"
+                    android:layout_gravity="center"
+                    android:hint="@string/lbl_percent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#0808f5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txt_caddress"
+                    android:hint="@string/lbl_address" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txt_cregdate"
+                    android:hint="@string/lbl_regdate" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/accent_material_dark"
+        android:clickable="true"
+        android:id="@+id/lo_button">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_clear"
+            android:text="@string/lbl_clear"
+            android:layout_weight="1"
+            android:hint="@string/lbl_clear" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_delete"
+            android:text="@string/lbl_delete"
+            android:layout_weight="1"
+            android:hint="@string/lbl_delete" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_update"
+            android:text="@string/lbl_update"
+            android:layout_weight="1"
+            android:hint="@string/lbl_update" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_add"
+            android:text="@string/lbl_add"
+            android:layout_weight="1"
+            android:hint="@string/lbl_add" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/txtbtn_clear"
+            android:layout_weight="1"
+            android:hint="@string/lbl_clear"
+            android:clickable="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/txtbtn_delete"
+            android:hint="@string/lbl_delete"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:clickable="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/txtbtn_update"
+            android:hint="@string/lbl_update"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:clickable="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/txtbtn_add"
+            android:hint="@string/lbl_add"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:clickable="true"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#81c784">
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/row_company" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView2" />
+
+</LinearLayout>

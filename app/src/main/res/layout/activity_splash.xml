@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.nwsoft.maninwork.SplashActivity"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:elevation="2dp"
+        android:background="@drawable/shape_gradient">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/app_name"
+            android:id="@+id/textView12"
+            android:textSize="62dp"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:elevation="16dp"
+            android:translationZ="@dimen/abc_button_inset_horizontal_material" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:scaleType="fitStart"
+            android:layout_weight="1"
+            android:src="@drawable/maninworksvg1024x500" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_version"
+            android:id="@+id/txt_version"
+            android:layout_gravity="center"
+            android:gravity="center"
+            style="@android:style/Widget.ProgressBar.Small" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_longtext"
+            android:id="@+id/textView8"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:background="@drawable/notification_template_icon_bg"
+            android:gravity="center" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_skip"
+            android:id="@+id/button4"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_gravity="bottom|center_horizontal"
+            android:drawableRight="@drawable/ic_fast_forward_black_24dp" />
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<datastore-indexes
+    autoGenerate="true">
+    <datastore-index kind="Company" ancestor="false" source="manual">
+        <property name="gmail" direction="asc" />
+        <property name="cname" direction="asc" />
+    </datastore-index>
+    <datastore-index kind="Labor" ancestor="false" source="manual">
+        <property name="gmail" direction="asc" />
+        <property name="lname" direction="asc" />
+        <property name="cname" direction="asc" />
+    </datastore-index>
+    <datastore-index kind="Transaction" ancestor="false" source="manual">
+        <property name="gmail" direction="asc" />
+        <property name="lname" direction="asc" />
+        <property name="cname" direction="asc" />
+    </datastore-index>
+</datastore-indexes>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Company Name:"
+        android:id="@+id/textView"
+        android:hint="@string/lbl_companyname" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_company"
+        android:background="@android:drawable/editbox_dropdown_light_frame" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lo_companies">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Labor"
+            android:id="@+id/textView14"
+            android:hint="@string/lbl_labor" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/edt_companies"
+            android:background="@android:drawable/editbox_background"
+            android:minHeight="80dp"
+            android:minLines="3"
+            android:enabled="false" />
+    </LinearLayout>
+
+</LinearLayout>

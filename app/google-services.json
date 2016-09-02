@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "926738304015",
+    "firebase_url": "https://xmaninwork.firebaseio.com",
+    "project_id": "xmaninwork",
+    "storage_bucket": "xmaninwork.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926738304015:android:1e4ef460bfb054c2",
+        "android_client_info": {
+          "package_name": "com.nwsoft.maninwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926738304015-crjtkm1g0cpm4vu31olic504ohv67qut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2ZB3FsuSDB87Nxqh7JDZyft8wX_hHwmM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

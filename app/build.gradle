@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
+    lintOptions {
+        disable 'MissingTranslation'
+    }
+    defaultConfig {
+        applicationId "com.nwsoft.maninwork"
+        minSdkVersion 11
+        targetSdkVersion 23
+        versionCode 9
+        versionName '2.16.09.01'
+        // Enabling multidex support.
+        multiDexEnabled true
+    }
+    signingConfigs {
+        config {
+            keyAlias 'mykeyalias'
+            keyPassword 'sir1480key'
+            storeFile file('D:/Users/Seongil.000/Documents/android_keystore/myKeyStore')
+            storePassword 'sir1480key'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            debuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    dexOptions {
+        incremental true
+    }
+    productFlavors {
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    //    compile 'com.android.support:appcompat-v7:24.0.0-alpha2'
+    //    compile 'com.android.support:design:24.0.0-alpha2'
+    compile project(path: ':Api', configuration: 'android-endpoints')
+    compile 'org.jsoup:jsoup:1.9.1'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.google.android.gms:play-services-ads:9.2.1'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:design:24.0.0'
+    compile 'com.google.android.gms:play-services-auth:9.2.1'
+    compile 'com.firebase:firebase-client-android:2.3.1'
+}
+apply plugin: 'com.google.gms.google-services'

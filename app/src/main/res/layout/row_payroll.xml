@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:id="@+id/txt_r10"
+            android:hint="@string/lbl_workym"
+            android:gravity="center_horizontal" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_r12"
+                android:hint="@string/lbl_work_std"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:layout_gravity="bottom" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_r13"
+                android:password="false"
+                android:hint="@string/lbl_work_jc"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:layout_gravity="bottom" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_r14"
+                android:hint="@string/lbl_work_yg"
+                android:layout_weight="1"
+                android:layout_gravity="bottom"
+                android:gravity="end" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_r15"
+                android:hint="@string/lbl_basedays"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:layout_gravity="bottom"
+                android:textColor="#1976d2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_r20"
+            android:hint="@string/hdr_paybase"
+            android:gravity="center_horizontal" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_r22"
+                android:hint="@string/hdr_bonus"
+                android:gravity="end"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_r23"
+                android:hint="@string/hdr_paytotal"
+                android:gravity="end"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_r24"
+                android:hint="@string/hdr_deduction"
+                android:gravity="end"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_r25"
+                android:hint="@string/hdr_paynet"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:textColor="#1976d2" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
