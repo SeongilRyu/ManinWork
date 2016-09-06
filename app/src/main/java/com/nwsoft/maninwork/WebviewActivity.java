@@ -108,6 +108,8 @@ public class WebviewActivity extends AppCompatActivity {
         mSettings = getSharedPreferences("Settings",MODE_PRIVATE);
         mGmail = mSettings.getString("GMAIL","");
         mLname = getIntent().getStringExtra("lname");
+        mYm = getIntent().getStringExtra("ex_ym");
+
         getTaxIncomeData();
         if ("listWebview".equalsIgnoreCase("listWebview")) {
             setContentView(R.layout.activity_webview);
@@ -118,7 +120,11 @@ public class WebviewActivity extends AppCompatActivity {
             setContentView(R.layout.row_webview);
         }
         initUi();
-        showMyDialog();
+        if (mYm==null || mYm.length() < 1) {
+            showMyDialog();
+        } else {
+            txt_payym.setText("Payroll for " + mYm);
+        }
     }
 
     @Override
@@ -308,11 +314,11 @@ public class WebviewActivity extends AppCompatActivity {
             strHtml=strHtml.replace("{d_transport}",String.format("%d",px.d_transports)); //교통비 일수
             strHtml=strHtml.replace("{m_transport}",String.valueOf(px.m_transports));   //교통비= 교통비일수 * 교통비
             strHtml=strHtml.replace("{pay_base}",String.valueOf(px.pay_base));       //기본급=근무일수*일당 + 교대비 + 교통비
-            strHtml=strHtml.replace("{h_over}",String.valueOf(px.workovertimes));
+            strHtml=strHtml.replace("{h_over}",String.valueOf(px.workovertimes/100f));
             strHtml=strHtml.replace("{m_over}",String.valueOf(px.m_overs));
             strHtml=strHtml.replace("{h_special}",String.valueOf(px.workspecials));
             strHtml=strHtml.replace("{m_special}",String.valueOf(px.m_specials));
-            strHtml=strHtml.replace("{h_spover}",String.valueOf(px.workspecialovers));
+            strHtml=strHtml.replace("{h_spover}",String.valueOf(px.workspecialovers/100f));
             strHtml=strHtml.replace("{m_spover}",String.valueOf(px.m_spovers));
             strHtml=strHtml.replace("{h_night}",String.valueOf(px.worknights));
             strHtml=strHtml.replace("{m_night}",String.format("%d",px.m_nights));
@@ -457,13 +463,13 @@ public class WebviewActivity extends AppCompatActivity {
                 px.pay_bonus = Math.round(px.bonusrate/100 * px.pay_base /12/10)*10;
                 //
                 px.workovertimes =tSumx.workovertime;
-                px.m_overs =(long)(Math.round(px.workovertimes * 1.5 * px.payhour/10)*10);
+                px.m_overs =(long)(Math.round(px.workovertimes/100f * 1.5 * px.payhour/10)*10);
                 px.workspecials = tSumx.workspecial;
                 px.m_specials = (long)(Math.round(px.workspecials * 1.5 * px.payhour/10)*10);
                 px.workspecialovers = tSumx.workspecialover;
-                px.m_spovers= (long)(px.workspecialovers * 2.0 * px.payhour);
+                px.m_spovers= (long)(px.workspecialovers/100f * 2.0 * px.payhour);
                 px.worknights = tSumx.worknight;
-                px.m_nights = (long)(Math.round(px.worknights * 0.5 * px.payhour/10)*10);
+                px.m_nights = (long)(Math.round(px.worknights * 2.0 * px.payhour/10)*10);
                 px.worklateearlys = tSumx.worklateearly;
                 px.m_lateas = (long)(px.worklateearlys * 1.0 * px.payhour/10)*10;
 
