@@ -106,4 +106,6 @@
     <string name="lbl_basedays">기본일수</string>
     <string name="lbl_signoutdisconn">사인아웃연결끊기</string>
     <string name="lbl_skip">스킵</string>
+    <string name="msg_radio_acom"><b>현재 회사</b>내의 모든 작업자에 %s 작업시간을  추가.</string>
+    <string name="msg_radio_allcom"><b>모든 회사</b>의 모든 작업자에 %s 작업시간을  추가.</string>
 </resources>

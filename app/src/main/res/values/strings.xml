@@ -126,4 +126,7 @@
     <string name="lbl_payinfo">PayInfos.</string>
     <string name="lbl_googlesigninsuccess">Google Signed in successfully</string>
     <string name="lbl_basedays">BaseDays</string>
+    <string name="msg_radio_acom">If checked, add %s hrs to all labors in <b>this company</b></string>
+    <string name="msg_radio_allcom">If checked, add %s hrs to all labors in <b>all company</b></string>
+
 </resources>

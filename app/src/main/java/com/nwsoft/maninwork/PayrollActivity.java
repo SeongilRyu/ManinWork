@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Build;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
 import android.util.Pair;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -78,8 +80,48 @@ public class PayrollActivity extends AppCompatActivity {
         myAdapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        getMenuInflater().inflate(R.menu.menu_actionmode, menu);
+        menu.findItem(R.id.menu_edit).setVisible(false);
+        menu.findItem(R.id.menu_sms).setVisible(false);
+        menu.findItem(R.id.menu_mailto).setVisible(false);
+        menu.findItem(R.id.menu_kakao).setVisible(false);
+        menu.findItem(R.id.menu_share).setVisible(false);
+        menu.findItem(R.id.menu_print).setVisible(false);
+        menu.findItem(R.id.menu_phone).setVisible(false);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        //ref...
+        int pos=info.position;		//첫째 info.position=0 info.id=1
+        long idx = info.id;				//첫째 info.id=1
+        Payrollx q = (Payrollx) listView.getAdapter().getItem(pos);
+        String title = q.lname;
+        String content = q.lname + q.lmobile + q.lemail;
+        Log.i("contextmenu", q.lname);
+        //ref....
+        switch (item.getItemId()) {
+            case R.id.menu_edit:
+                return false;
+            case R.id.menu_payroll:
+                Intent ipayroll = new Intent(this, WebviewActivity.class);
+                ipayroll.putExtra("lname", q.lname);
+                ipayroll.putExtra("ex_ym", q.pym);
+                startActivity(ipayroll);
+                return true;
+            case R.id.menu_phone:
+                return false;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
     private void initUi() {
         listView = (ListView)findViewById(R.id.list_payroll);
+        registerForContextMenu(listView);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -135,7 +177,7 @@ public class PayrollActivity extends AppCompatActivity {
                 px.child=(int)lbx.lchild;
                 px.lmobile=lbx.lmobile;
                 px.lemail=lbx.lemail;
-                Companyx cmx = getCompany(px.cname);
+                Companyx cmx = getCompanyx(px.cname);
                 px.payhour= cmx.cpayperhour;
                 px.payday = cmx.cpayperhour * 8; //일당
                 px.paytransit = cmx.cpaytransition;
@@ -201,7 +243,7 @@ public class PayrollActivity extends AppCompatActivity {
             c.close();
         }
     }
-    private Companyx getCompany(String cname) {
+    private Companyx getCompanyx(String cname) {
         Companyx cmx = new Companyx();
         String sql = "select * from TableCompany where gmail='{gmail}' and cname='{cname}';";
         sql= sql.replace("{gmail}", mGmail).replace("{cname}",cname);

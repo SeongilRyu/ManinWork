@@ -349,6 +349,7 @@ public class CompanyActivity extends AppCompatActivity implements View.OnClickLi
     }
     private void btnDelete_onClick(View v) {
         Company ca=getUI2Data();
+        int cnt_labor = getLaborsCnt(ca.getCname());
         if (ca.getCid()==null || ca.getCname().length() < 1) {
             Snackbar.make(v, "No company exist to DELETE!", Snackbar.LENGTH_LONG)
                     .setAction("noAction", new View.OnClickListener() {
@@ -358,9 +359,30 @@ public class CompanyActivity extends AppCompatActivity implements View.OnClickLi
                         }
                     }).show();
         } else {
-            new CompanyAsyncTask("delete").execute(new Pair<Context, Company>(CompanyActivity.this, ca));
-            dbAud("delete",ca);
+            if (cnt_labor>0) {
+                String msg = String.format("Cannot delete.! There are %d labors in company.",cnt_labor);
+                Snackbar.make(v,msg,Snackbar.LENGTH_LONG)
+                        .setAction("Cannot delete",null)
+                        .show();
+            } else {
+                new CompanyAsyncTask("delete").execute(new Pair<Context, Company>(CompanyActivity.this, ca));
+                dbAud("delete", ca);
+            }
         }
+    }
+    private int getLaborsCnt(String cname) {
+        int cnt =0;
+        String sql = String.format("select count(lname) cnt from TableLabor where cname='%s'"
+                ,cname);
+        Cursor c = mDb.rawQuery(sql,null);
+        try {
+            while(c.moveToNext()) {
+                cnt=c.getInt(c.getColumnIndex("cnt"));
+            }
+        } finally {
+            c.close();
+        }
+        return cnt;
     }
     private void clearUI() {
         cname.setTag(null);

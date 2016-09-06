@@ -390,9 +390,17 @@ public class LaborActivity extends AppCompatActivity implements View.OnClickList
             public void onClick(View v) {
                 Laborx lbx = moveUI2_Laborx();
                 Labor plb = lbx.fill2Labor();
-                new LaborAsyncTask("delete").execute(new Pair<Context, Labor>(getApplicationContext(), plb));
-                dbAud("delete",lbx);
-                Log.i("deleteLabor","a row deleted from TableLabor");
+                int cnt = getTransCnt(lbx.lname);
+                if (cnt > 0) {
+                    String msg = String.format("Cannot delete.! There are %d work time transactions on labor.",cnt);
+                    Snackbar.make(v,msg,Snackbar.LENGTH_LONG)
+                            .setAction("Cannot delete",null)
+                            .show();
+                } else {
+                    new LaborAsyncTask("delete").execute(new Pair<Context, Labor>(getApplicationContext(), plb));
+                    dbAud("delete", lbx);
+                    Log.i("deleteLabor", "a row deleted from TableLabor");
+                }
             }
         });
         btn_upsert.setOnClickListener(new View.OnClickListener() {
@@ -412,6 +420,20 @@ public class LaborActivity extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(LaborActivity.this,"Upserted labor!!",Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    private int getTransCnt(String lname) {
+        int cnt =0;
+        String sql = String.format("select count(*) cnt from TableTransaction where lname='%s'"
+                ,lname);
+        Cursor c = mDb.rawQuery(sql,null);
+        try {
+            while(c.moveToNext()) {
+                cnt=c.getInt(c.getColumnIndex("cnt"));
+            }
+        } finally {
+            c.close();
+        }
+        return cnt;
     }
     private void dbAud(String aud, Laborx obj) {
         if (aud.equalsIgnoreCase("add")) {

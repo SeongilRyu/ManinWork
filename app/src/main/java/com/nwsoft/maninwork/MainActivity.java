@@ -18,6 +18,7 @@ import android.print.PrintJob;
 import android.print.PrintManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -233,6 +234,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final EditText edt_mycom = new EditText(this);
         edt_mycom.setLayoutParams(lp);
         edt_mycom.setLines(1);
+        TextInputLayout tilo = new TextInputLayout(this);
+        tilo.setLayoutParams(lp);
+        tilo.addView(edt_mycom);
         String mycomp=mSettings.getString("mycompany","nocompany");
         if (mycomp.equalsIgnoreCase("nocompany")) {
             edt_mycom.setHint("Enter company name");
@@ -242,7 +246,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView tvt = new TextView(this);
         tvt.setText("Set your company");
         li.addView(tvt);
-        li.addView(edt_mycom);
+        li.addView(tilo);
         new AlertDialog.Builder(this)
                 .setTitle("InputBox")   //.setCustomTitle(tvt)
                 .setView(li)
@@ -663,8 +667,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
     private void displaySplash() {
-        Intent intent = new Intent(MainActivity.this, SplashActivity.class);
-        startActivity(intent);
         mSettings = getSharedPreferences("Settings",MODE_PRIVATE);
         mGmail = mSettings.getString("GMAIL","");
         Log.i("mGmail", mGmail);
@@ -674,6 +676,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             new LaborAsyncTask("list").execute(new Pair<Context, Labor>(MainActivity.this, new Labor()));
             new TransactionAsyncTask("list").execute(new Pair<Context, Transaction>(MainActivity.this, new Transaction()));
         }
+        Intent intent = new Intent(MainActivity.this, SplashActivity.class);
+        startActivity(intent);
     }
     private void mailto() {
         Intent it = new Intent(Intent.ACTION_SEND);

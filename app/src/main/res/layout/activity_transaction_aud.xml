@@ -186,6 +186,11 @@
                     android:lines="1"
                     android:inputType="number"
                     android:gravity="center" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/checkBox" />
             </LinearLayout>
 
             <LinearLayout
@@ -199,7 +204,8 @@
                     android:id="@+id/txt_jc_help"
                     android:hint="@string/lbl_work_jc"
                     android:layout_weight="1"
-                    android:clickable="true" />
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_help_outline_black_24dp" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -210,6 +216,11 @@
                     android:lines="1"
                     android:inputType="number"
                     android:gravity="center" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/checkBox2" />
             </LinearLayout>
 
             <LinearLayout
@@ -220,9 +231,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView34"
+                    android:id="@+id/txt_yg_help"
                     android:hint="@string/lbl_work_yg"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:drawableEnd="@drawable/ic_help_outline_black_24dp" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -233,6 +245,11 @@
                     android:lines="1"
                     android:inputType="number"
                     android:gravity="center" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/checkBox3" />
             </LinearLayout>
 
             <LinearLayout
@@ -256,6 +273,16 @@
                     android:lines="1"
                     android:inputType="number"
                     android:gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txt_over_m"
+                    android:hint="00"
+                    android:drawableStart="@drawable/ic_colon_vert_black_24dp"
+                    android:paddingRight="6dp"
+                    android:gravity="fill_vertical" />
             </LinearLayout>
 
             <LinearLayout
@@ -300,8 +327,18 @@
                     android:layout_weight="1"
                     android:selectAllOnFocus="true"
                     android:lines="1"
-                    android:inputType="number"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txt_spcover_m"
+                    android:hint="00"
+                    android:drawableStart="@drawable/ic_colon_vert_black_24dp"
+                    android:paddingRight="6dp"
+                    android:gravity="fill_vertical" />
             </LinearLayout>
 
             <LinearLayout

@@ -447,9 +447,9 @@ public class TransactionActivity extends AppCompatActivity implements View.OnCli
             holder.tr11.setText(String.valueOf(rs.getWorkstandard()));
             holder.tr12.setText(String.valueOf(rs.getWorkJc()));
             holder.tr13.setText(String.valueOf(rs.getWorkYg()));
-            holder.tr14.setText(String.valueOf(rs.getWorkovertime()));
+            holder.tr14.setText(String.valueOf(rs.getWorkovertime()/100.0f));
             holder.tr21.setText(String.valueOf(rs.getWorkspecial()));
-            holder.tr22.setText(String.valueOf(rs.getWorkspecialover()));
+            holder.tr22.setText(String.valueOf(rs.getWorkspecialover()/100.0f));
             holder.tr23.setText(String.valueOf(rs.getWorknight()));
             holder.tr24.setText(String.valueOf(rs.getWorklateearly()));
             //findQuotesVolley(holder);
